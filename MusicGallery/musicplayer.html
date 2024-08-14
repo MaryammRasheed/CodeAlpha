@@ -5,9 +5,6 @@
     <link rel="stylesheet" href="styless.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Music Player</title>
-    <style>
-       
-    </style>
 </head>
 <body>
     <div class="music-player">
@@ -19,25 +16,25 @@
         <audio id="audio" controls>
             <source src="Excuses Ap Dhillon 128 Kbps.mp3" type="audio/mp3">
         </audio>
-       
         <div class="controls">
             <button id="PrevSong" onclick="prevSong()">
                 <img src="right-chevron_8213533.png" alt="Previous">
             </button>
             <button onclick="stopSong()">
-            <img src="Pause button.png" alt="Next"></button>
+                <img src="Pause button.png" alt="Stop">
+            </button>
             <button id="NextSong" onclick="nextSong()">
                 <img src="left-chevron_8213511.png" alt="Next">
             </button>
-            
         </div>
     </div>
 
     <script>
         let audio = document.getElementById('audio');
         let cover = document.getElementById('cover');
-        let songTitle = document.getElementById('song-title');
-        let singerName = document.getElementById('singer-name');
+        let songTitle = document.getElementById('title');
+        let singerName = document.getElementById('singer');
+        
         const songs = [
             {
                 title: "Excuses",
@@ -58,7 +55,7 @@
                 src: "Kesariya Brahmastra 128 Kbps.mp3"
             }
         ];
-       
+
         let currentSongIndex = 0;
 
         function loadSong(index) {
@@ -71,7 +68,6 @@
             audio.play().catch(error => console.error('Playback error:', error));
         }
 
-        
         function playPause() {
             if (audio.paused) {
                 audio.play().catch(error => console.error('Playback error:', error));
@@ -101,5 +97,3 @@
     </script>
 </body>
 </html>
-
-
